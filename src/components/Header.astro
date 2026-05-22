@@ -1,6 +1,7 @@
 ---
 import Button from "./starwind/button/Button.astro";
 import Logo from "./Logo.astro";
+import NavLink from "./NavLink.astro";
 import { header } from "@/content/content";
 
 interface Props {
@@ -22,16 +23,15 @@ const { class: className } = Astro.props;
 				<span class="hidden sm:inline">{name}</span>
 			</a>
 
-			<!-- Navigation Links -->
 			<nav class="hidden md:flex items-center gap-8">
 				{
 					navLinks.map((link) => (
-						<a
+						<NavLink
 							href={link.href}
 							class="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
 						>
 							{link.label}
-						</a>
+						</NavLink>
 					))
 				}
 			</nav>
@@ -87,40 +87,17 @@ const { class: className } = Astro.props;
 			</div>
 		</div>
 
-		<script>
-			if (typeof window !== "undefined") {
-				window.addEventListener("DOMContentLoaded", () => {
-					const toggleButton = document.getElementById("mobile-menu-btn");
-					const menu = document.getElementById("mobile-menu");
-
-					if (!toggleButton) return;
-
-					toggleButton.addEventListener("click", () => {
-						const currentlyExpanded =
-							toggleButton.getAttribute("aria-expanded") === "true";
-						const nextExpanded = !currentlyExpanded;
-
-						toggleButton.setAttribute("aria-expanded", String(nextExpanded));
-
-						if (menu) {
-							menu.setAttribute("aria-hidden", String(!nextExpanded));
-						}
-					});
-				});
-			}
-		</script>
-
 		<!-- Mobile Menu -->
 		<nav id="mobile-menu" class="hidden overflow-hidden bg-background md:hidden">
 			<div class="border-t border-border px-2 pb-3 pt-2 space-y-1">
 				{
 					navLinks.map((link) => (
-						<a
+						<NavLink
 							href={link.href}
 							class="block rounded-md px-3 py-2 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
 						>
 							{link.label}
-						</a>
+						</NavLink>
 					))
 				}
 				<div class="flex items-center justify-between px-3 py-2">
@@ -156,6 +133,9 @@ const { class: className } = Astro.props;
 	const mobileMenu = document.getElementById("mobile-menu");
 
 	menuBtn?.addEventListener("click", () => {
+		const isExpanded = menuBtn.getAttribute("aria-expanded") === "true";
+		menuBtn.setAttribute("aria-expanded", String(!isExpanded));
+		mobileMenu?.setAttribute("aria-hidden", String(isExpanded));
 		mobileMenu?.classList.toggle("hidden");
 	});
 
@@ -163,6 +143,8 @@ const { class: className } = Astro.props;
 	document.querySelectorAll("#mobile-menu a").forEach((link) => {
 		link.addEventListener("click", () => {
 			mobileMenu?.classList.add("hidden");
+			menuBtn?.setAttribute("aria-expanded", "false");
+			mobileMenu?.setAttribute("aria-hidden", "true");
 		});
 	});
 

@@ -34,11 +34,9 @@ import Button from "./starwind/button/Button.astro";
 				<!-- Trust indicator -->
 				<div class="flex items-center gap-4 pt-4">
 					<div class="flex gap-0.5 text-yellow-500">
-						<svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-						<svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-						<svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-						<svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-						<svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+						{Array.from({ length: 5 }).map(() => (
+							<svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+						))}
 					</div>
 					<p class="text-sm text-muted-foreground">
 						<strong>4,8 / 5 Sterne</strong> auf Immowelt · Seit 1993 in Freiberg
@@ -52,8 +50,7 @@ import Button from "./starwind/button/Button.astro";
 					href="https://www.immowelt.de/profil/8af7c7913ad1405489cff66d689581e5"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="inline-flex items-center gap-3 rounded-md px-8 py-4 text-lg font-semibold text-black transition-opacity hover:opacity-90"
-					style="background-color: #ffcc00;"
+					class="inline-flex items-center gap-3 rounded-md px-8 py-4 text-lg font-semibold text-black transition-opacity hover:opacity-90 bg-[#ffcc00]"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
 					Angebote auf Immowelt

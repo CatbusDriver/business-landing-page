@@ -1,6 +1,7 @@
 ---
 import { footer, siteConfig, cta } from "@/content/content";
 import Logo from "./Logo.astro";
+import NavLink from "./NavLink.astro";
 import SocialIcon from "./SocialIcon.astro";
 
 const { name, description } = siteConfig;
@@ -29,9 +30,12 @@ const { quickLinks, legal } = sections;
 				<nav class="flex flex-col gap-2">
 					{
 						quickLinks.links.map((link) => (
-							<a href={link.href} class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+							<NavLink
+								href={link.href}
+								class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+							>
 								{link.label}
-							</a>
+							</NavLink>
 						))
 					}
 				</nav>
@@ -43,12 +47,12 @@ const { quickLinks, legal } = sections;
 				<nav class="flex flex-col gap-2">
 					{
 						legal.links.map((link) => (
-							<a
+							<NavLink
 								href={link.href}
 								class="text-sm text-muted-foreground hover:text-foreground transition-colors"
 							>
 								{link.label}
-							</a>
+							</NavLink>
 						))
 					}
 				</nav>
