@@ -1,0 +1,82 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+---
+
+<Layout>
+	<Header />
+	<main class="py-12 sm:py-16 md:py-20 lg:py-24">
+		<div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+			<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-foreground mb-8">
+				Impressum
+			</h1>
+
+			<div class="prose prose-lg text-muted-foreground space-y-6">
+				<section>
+					<h2 class="text-xl font-semibold text-foreground mb-2">Angaben gemäß § 5 DDG</h2>
+					<p>
+						RWR Immobilienmakler GmbH<br />
+						Poststr. 11<br />
+						09599 Freiberg
+					</p>
+				</section>
+
+				<section>
+					<h2 class="text-xl font-semibold text-foreground mb-2">Kontakt</h2>
+					<p>
+						Telefon: <a href="tel:01776421056" class="text-primary hover:text-primary/80">0177 6421056</a><br />
+						E-Mail: <a href="mailto:ur@rwr-makler.de" class="text-primary hover:text-primary/80">ur@rwr-makler.de</a>
+					</p>
+				</section>
+
+				<section>
+					<h2 class="text-xl font-semibold text-foreground mb-2">Gesetzlicher Vertreter</h2>
+					<p>Uwe Richter</p>
+				</section>
+
+				<section>
+					<h2 class="text-xl font-semibold text-foreground mb-2">Registereintrag</h2>
+					<p>
+						Registergericht: AG Chemnitz<br />
+						Registernummer: HRB 8866
+					</p>
+				</section>
+
+				<section>
+					<h2 class="text-xl font-semibold text-foreground mb-2">Umsatzsteuer-ID</h2>
+					<p>
+						USt-IdNr. gemäß § 27a UStG: DE812 687 175
+					</p>
+				</section>
+
+				<section>
+					<h2 class="text-xl font-semibold text-foreground mb-2">Gewerbeerlaubnis</h2>
+					<p>
+						Die Gewerbeerlaubnis gem. §34c GewO wurde erteilt durch:<br />
+						Landratsamt Mittelsachsen<br />
+						Abt. Ordnung, Sicherheit und Veterinärwesen<br />
+						Ref. Allgem. Ordnungsangelegenheiten
+					</p>
+				</section>
+
+				<section>
+					<h2 class="text-xl font-semibold text-foreground mb-2">Zuständige Aufsichtsbehörde</h2>
+					<p>
+						LRA Mittelsachsen<br />
+						Frauensteiner Str. 43<br />
+						09599 Freiberg
+					</p>
+				</section>
+
+				<section>
+					<h2 class="text-xl font-semibold text-foreground mb-2">Verbraucherinformationen</h2>
+					<p>
+						Wir sind gemäß § 36 VSBG nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+					</p>
+				</section>
+			</div>
+		</div>
+	</main>
+	<Footer />
+</Layout>

@@ -2,7 +2,7 @@
 import { cta } from "@/content/content";
 import Button from "./starwind/button/Button.astro";
 
-const { headline, description, button, disclaimer } = cta;
+const { headline, description, phone, email, immoweltUrl, address } = cta;
 ---
 
 <section id="cta" class="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
@@ -22,31 +22,33 @@ const { headline, description, button, disclaimer } = cta;
 				{description}
 			</p>
 
-			<!-- Email Signup Form or CTA Button -->
-			<form 
-				name="contact"	
-				method="POST"
-				data-netlify="true" 
-				class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto"
-			>
-				<input type="hidden" name="form-name" value="contact" />
-				<input
-					type="email"
-					name="email"
-					placeholder="your@email.com"
-					class="flex-1 w-full px-4 py-3 rounded-md border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
-					aria-label="Email address"
-					required
-				/>
-				<Button type="submit" variant="primary" size="lg" class="whitespace-nowrap">
-					{button.label}
+			<!-- Contact Options -->
+			<div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto mb-8">
+				<Button variant="primary" size="lg" href={`tel:${phone.replace(/\s/g, '')}`} class="w-full sm:w-auto">
+					<svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+					{phone}
 				</Button>
-			</form>
+				<Button variant="ghost" size="lg" href={`mailto:${email}`} class="w-full sm:w-auto">
+					<svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+					{email}
+				</Button>
+			</div>
 
-			<!-- Additional Info -->
-			<p class="text-sm text-muted-foreground mt-6">
-				{disclaimer}
-			</p>
+			<!-- Immowelt Link -->
+			<div class="flex flex-col items-center gap-3">
+				<a
+					href={immoweltUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
+				>
+					Aktuelle Immobilienangebote auf Immowelt ansehen →
+				</a>
+				<p class="text-sm text-muted-foreground">
+					<svg xmlns="http://www.w3.org/2000/svg" class="inline size-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+					{address}
+				</p>
+			</div>
 		</div>
 	</div>
 </section>

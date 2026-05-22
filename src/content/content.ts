@@ -1,23 +1,23 @@
 /**
- * Content constants for the Astro Validation Landing theme
- * Update these values to customize your landing page content
+ * Inhalte für die Landingpage von Uwe Richter – RWR Immobilienmakler GmbH
  */
 
 export const siteConfig = {
-  name: "Astro Validation Landing",
-  title: "Astro Validation Landing - Validate Your Product Idea",
+  name: "Uwe Richter Immobilien",
+  title: "Uwe Richter – Ihr Immobilienmakler in Freiberg und Umgebung",
   description:
-    "Build beautiful, high-converting landing pages to test your product idea, gather early interest, and validate market demand—without writing code.",
+    "Seit 1993 Ihr kompetenter Ansprechpartner für Immobilien in Freiberg und Mittelsachsen. Verkauf, Vermietung, Bewertung und Verwaltung aus einer Hand.",
   image: "/og-image.png",
   quickLinks: [
-    { label: "Features", href: "#features" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "FAQ", href: "#faq" }
+    { label: "Leistungen", href: "/#features" },
+    { label: "So funktioniert's", href: "/#how-it-works" },
+    { label: "Aktuelle Angebote", href: "https://www.immowelt.de/profil/8af7c7913ad1405489cff66d689581e5" },
+    { label: "FAQ", href: "/#faq" }
   ],
   legalLinks: [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
-    { label: "Contact", href: "mailto:hello@astro-validation-landing.com" }
+    { label: "Impressum", href: "/impressum" },
+    { label: "Datenschutz", href: "/privacy" },
+    { label: "Kontakt", href: "mailto:ur@rwr-makler.de" }
   ]
 };
 
@@ -25,183 +25,182 @@ export const header = {
   name: siteConfig.name,
   navLinks: siteConfig.quickLinks,
   cta: {
-    label: "Get Early Access",
-    href: "#cta"
+    label: "Kontakt aufnehmen",
+    href: "/#cta"
   }
 };
 
 export const hero = {
   headline:
-    "Stop Guessing, Start Validating. Launch Your Idea with Confidence.",
+    "Ihr Immobilienmakler in Freiberg und Umgebung \u2013 seit 1993.",
   subheadline:
-    "Quickly build beautiful, high-converting landing pages to test your product idea, gather early interest, and validate market demand—without writing a single line of custom code. Get started today with Astro Validation Landing.",
+    "Ob Verkauf, Vermietung oder Bewertung \u2013 Uwe Richter und das Team der RWR Immobilienmakler GmbH begleiten Sie pers\u00f6nlich und kompetent bei allen Immobilienangelegenheiten in Freiberg und Mittelsachsen.",
   primaryCta: {
-    label: "Get Early Access Now",
-    href: "#cta"
+    label: "Jetzt Kontakt aufnehmen",
+    href: "/#cta"
   },
   secondaryCta: {
-    label: "Learn More",
-    href: "#features"
+    label: "Unsere Leistungen",
+    href: "/#features"
   },
   image: {
     src: "/images/hero-illustration.png",
-    alt: "Hero illustration showing a validation dashboard"
+    alt: "Immobilien in Freiberg und Mittelsachsen"
   }
 };
 
 export const problem = {
-  headline: "Are You Building in the Dark?",
+  headline: "Immobilie verkaufen oder vermieten – aber wie?",
   description:
-    "Many entrepreneurs spend months or even years building the perfect product, only to discover that nobody wants it. You might be iterating on assumptions instead of validated facts. Without early market validation, you risk wasting time and resources on ideas that won't resonate with your audience."
+    "Der Immobilienmarkt ist komplex. Ohne Marktkenntnis und Erfahrung riskieren Sie, Ihre Immobilie unter Wert zu verkaufen oder den falschen Mieter zu finden. Rechtliche Fallstricke, aufwendige Besichtigungen und endlose Verhandlungen kosten Zeit und Nerven."
 };
 
 export const solution = {
-  headline: "Validate Your Vision, Faster & Smarter.",
+  headline: "Mit über 30 Jahren Erfahrung an Ihrer Seite.",
   description:
-    "Astro Validation Landing is your secret weapon for testing product ideas quickly and gathering real market feedback before you invest heavily in development. Our theme makes it simple to create stunning, conversion-optimized landing pages that capture interest, collect emails, and validate market demand. Launched from concept to live in hours, not weeks."
+    "Als Ihr regionaler Immobilienexperte übernehme ich den gesamten Prozess – von der professionellen Bewertung über die Vermarktung bis zum erfolgreichen Abschluss. Profitieren Sie von meiner langjährigen Marktkenntnis in Freiberg und Mittelsachsen, persönlicher Betreuung und einem starken Netzwerk."
 };
 
 export const features = {
-  heading: "Why Astro Validation Landing is Your Secret Weapon",
+  heading: "Unsere Leistungen für Sie",
   description:
-    "Everything you need to validate your product idea and gather market feedback.",
+    "Kompetente Betreuung rund um Ihre Immobilie – alles aus einer Hand.",
   items: [
     {
-      icon: "⚡",
-      headline: "Blazing Fast Performance",
+      icon: "🏠",
+      headline: "Immobilienverkauf",
       description:
-        "Lighthouse 100 scores. Built with Astro for instant page loads that keep visitors engaged and boost conversions."
+        "Professionelle Vermarktung Ihrer Immobilie zum bestmöglichen Preis. Von der Wertermittlung bis zur Schlüsselübergabe."
     },
     {
-      icon: "✨",
-      headline: "Stunning, Conversion-Focused Designs",
+      icon: "🔑",
+      headline: "Vermietung",
       description:
-        "Pre-built, responsive layouts designed by conversion experts. Every pixel serves a purpose."
+        "Wir finden den passenden Mieter für Ihr Objekt. Bonitätsprüfung, Besichtigungen und Mietvertragsgestaltung inklusive."
     },
     {
-      icon: "🎨",
-      headline: "Effortless Customization",
+      icon: "📋",
+      headline: "Energieausweis",
       description:
-        "Swap colors, fonts, and content with simple configuration. No coding required for basic changes."
+        "Erstellung von Energieausweisen für Ihre Immobilie – gesetzlich vorgeschrieben bei Verkauf und Vermietung."
+    },
+    {
+      icon: "🏢",
+      headline: "Gewerbeimmobilien",
+      description:
+        "Spezialisiert auf Gewerbeimmobilien in der Region. Büros, Ladenflächen, Hallen und Grundstücke."
     },
     {
       icon: "📊",
-      headline: "Integrated Analytics & Tracking",
+      headline: "Immobilienbewertung",
       description:
-        "Built-in hooks for Google Analytics, Segment, and custom tracking. Measure what matters."
+        "Fundierte Marktwertermittlung auf Basis aktueller Marktdaten und langjähriger regionaler Expertise."
     },
     {
-      icon: "🔒",
-      headline: "Built for Security & Privacy",
+      icon: "🏗️",
+      headline: "Projektentwicklung",
       description:
-        "GDPR-compliant, no third-party trackers by default. Your visitors' data is safe."
-    },
-    {
-      icon: "📱",
-      headline: "Mobile-First Design",
-      description:
-        "Perfectly optimized for every device. Your landing page looks incredible on phones, tablets, and desktops."
+        "Begleitung von Immobilienprojekten von der Planung bis zur Fertigstellung – mit Erfahrung und Weitblick."
     }
   ]
 };
 
 export const howItWorks = {
-  heading: "Launch Your Idea in 3 Simple Steps",
+  heading: "In 3 Schritten zum Erfolg",
   description:
-    "From concept to live landing page validation in minutes, not weeks.",
+    "So einfach funktioniert die Zusammenarbeit mit Uwe Richter Immobilien.",
   items: [
     {
       number: "1",
-      headline: "Choose Your Template",
+      headline: "Erstgespräch",
       description:
-        "Select a pre-designed template or start from scratch. Customize colors, fonts, and layout to match your brand."
+        "Kontaktieren Sie uns telefonisch oder per E-Mail. In einem unverbindlichen Erstgespräch besprechen wir Ihre Wünsche und Ziele."
     },
     {
       number: "2",
-      headline: "Customize Your Message",
+      headline: "Bewertung & Strategie",
       description:
-        "Write your headline, add your value proposition, and upload your image. All without touching a line of code."
+        "Wir bewerten Ihre Immobilie professionell und entwickeln gemeinsam die optimale Vermarktungsstrategie."
     },
     {
       number: "3",
-      headline: "Go Live & Gather Insights",
+      headline: "Vermarktung & Abschluss",
       description:
-        "Deploy in seconds and start collecting emails and feedback. Access detailed analytics to understand your audience."
+        "Wir übernehmen die gesamte Vermarktung, führen Besichtigungen durch und begleiten Sie bis zum erfolgreichen Vertragsabschluss."
     }
   ]
 };
 
 export const testimonials = {
-  heading: "What Early Adopters Are Saying",
+  heading: "Das sagen unsere Kunden",
   description:
-    "Real founders share their success stories using Astro Validation Landing.",
+    "Bewertet mit 4,8 von 5 Sternen auf Immowelt – überzeugen Sie sich selbst.",
   items: [
     {
       quote:
-        "We validated our SaaS idea in 48 hours using Astro Validation Landing. Got 200+ email signups from day one. This tool is a game-changer.",
-      author: "Sarah Chen",
-      company: "Product Manager at TechStartup",
-      avatar: "SC",
+        "Herr Richter hat den Verkauf unseres Mehrfamilienhauses in Freiberg hervorragend abgewickelt. Kompetent, zuverlässig und immer erreichbar.",
+      author: "Familie Weber",
+      company: "Verkauf Mehrfamilienhaus, Freiberg",
+      avatar: "FW",
       image: "/images/avatar-1.jpg"
     },
     {
       quote:
-        "As a non-technical founder, I was skeptical. But this made launching a validation page easier than I expected. Highly recommended!",
-      author: "Marcus Johnson",
-      company: "Founder, AI Solutions Co.",
-      avatar: "MJ",
+        "Die Bewertung war sehr fundiert und der Verkaufspreis wurde sogar übertroffen. Wir können Herrn Richter nur weiterempfehlen!",
+      author: "Thomas Müller",
+      company: "Verkauf Einfamilienhaus, Mittelsachsen",
+      avatar: "TM",
       image: "/images/avatar-2.jpg"
     },
     {
       quote:
-        "The conversion optimization built into this theme is incredible. Our CTR is 3x higher than typical landing page templates.",
-      author: "Elena Rodriguez",
-      company: "Growth Lead, FinTech Ventures",
-      avatar: "ER",
+        "Schnelle und professionelle Vermittlung unserer Gewerbeimmobilie. Die langjährige Erfahrung in der Region macht sich bezahlt.",
+      author: "Petra Schmidt",
+      company: "Gewerbeimmobilie, Freiberg",
+      avatar: "PS",
       image: "/images/avatar-3.jpg"
     }
   ]
 };
 
 export const cta = {
-  headline: "Ready to Validate Your Next Big Idea?",
+  headline: "Haben Sie eine Immobilie zu verkaufen oder zu vermieten?",
   description:
-    "Stop guessing and start validating today. Build your high-converting validation landing page in minutes, not weeks.",
-  button: {
-    label: "Start Validating Today!",
-    href: "#email-signup"
-  },
-  disclaimer: "No spam, ever. Unsubscribe anytime."
+    "Kontaktieren Sie mich für ein unverbindliches Erstgespräch. Ich berate Sie persönlich und finde die beste Lösung für Ihre Immobilie.",
+  phone: "0177 6421056",
+  email: "ur@rwr-makler.de",
+  immoweltUrl: "https://www.immowelt.de/profil/8af7c7913ad1405489cff66d689581e5",
+  address: "Poststr. 11, 09599 Freiberg"
 };
 
 export const faq = {
-  heading: "Got Questions? We've Got Answers.",
-  description: "Everything you need to know about Astro Validation Landing.",
+  heading: "Häufig gestellte Fragen",
+  description: "Antworten auf die wichtigsten Fragen rund um unsere Leistungen.",
   items: [
     {
-      question: "What products can I validate?",
+      question: "Was kostet die Beauftragung eines Maklers?",
       answer:
-        "You can validate any product or service idea—SaaS, mobile apps, physical products, online courses, consulting services, and more. If you have an idea and want to test market demand, this theme is for you."
+        "Die Maklerprovision wird in der Regel zwischen Käufer und Verkäufer geteilt. Die genauen Konditionen besprechen wir gerne in einem persönlichen Gespräch. Die Erstberatung ist selbstverständlich kostenlos und unverbindlich."
     },
     {
-      question: "Do I need coding skills?",
+      question: "Wie wird der Wert meiner Immobilie ermittelt?",
       answer:
-        "No! Astro Validation Landing is designed for non-technical founders and entrepreneurs. You can customize colors, copy, and layout through simple configuration. For advanced customization, basic HTML/CSS knowledge helps."
+        "Wir erstellen eine fundierte Marktwertermittlung auf Basis aktueller Vergleichswerte, der Lage, des Zustands und der Ausstattung Ihrer Immobilie. Unsere über 30-jährige Erfahrung in der Region Freiberg sorgt für eine realistische Einschätzung."
     },
     {
-      question: "How do I collect emails?",
+      question: "Wie lange dauert es, eine Immobilie zu verkaufen?",
       answer:
-        "The theme includes placeholder forms that integrate with popular email platforms like Mailchimp, ConvertKit, and Brevo. We also support custom webhooks for any service you use."
+        "Die Verkaufsdauer hängt von verschiedenen Faktoren ab – Lage, Zustand, Preis und Nachfrage. In der Regel können wir Immobilien in Freiberg und Umgebung innerhalb weniger Wochen bis Monate erfolgreich vermitteln."
     },
     {
-      question: "Is it mobile-responsive?",
+      question: "Welche Unterlagen benötige ich für den Verkauf?",
       answer:
-        "Absolutely! Every component is built mobile-first and tested across all devices. Your landing page will look perfect on phones, tablets, and desktops."
+        "Für den Verkauf benötigen Sie unter anderem Grundbuchauszug, Energieausweis, Grundrisse und Wohnflächenberechnung. Wir unterstützen Sie bei der Beschaffung aller notwendigen Dokumente."
     },
     {
-      question: "What support is available?",
+      question: "In welcher Region sind Sie tätig?",
       answer:
-        "We offer email support, an active community forum, and comprehensive documentation. Plus, the source code is yours to modify as needed."
+        "Unser Schwerpunkt liegt in Freiberg und dem Landkreis Mittelsachsen. Wir sind hier seit 1993 fest verwurzelt und kennen den lokalen Markt wie unsere Westentasche."
     }
   ]
 };
@@ -209,18 +208,16 @@ export const faq = {
 export const footer = {
   sections: {
     quickLinks: {
-      title: "Quick Links",
+      title: "Navigation",
       links: siteConfig.quickLinks
     },
     legal: {
-      title: "Legal",
+      title: "Rechtliches",
       links: siteConfig.legalLinks
     }
   },
-  copyright: `© ${new Date().getFullYear()} Astro Validation Landing. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} RWR Immobilienmakler GmbH. Alle Rechte vorbehalten.`,
   social: [
-    { name: "Twitter", icon: "twitter", url: "https://twitter.com" },
-    { name: "GitHub", icon: "github", url: "https://github.com" },
-    { name: "LinkedIn", icon: "linkedin", url: "https://linkedin.com" }
+    { name: "Immowelt", icon: "immowelt", url: "https://www.immowelt.de/profil/8af7c7913ad1405489cff66d689581e5" }
   ]
 };
