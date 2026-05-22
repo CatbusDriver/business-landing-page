@@ -1,0 +1,24 @@
+immo-team-richter.de, immo-t-r.de {
+	root * /var/www/immo-team-richter.de
+	file_server
+	encode gzip
+
+	# Clean URLs (Astro generates /impressum/index.html etc.)
+	try_files {path} {path}/ {path}/index.html
+
+	# Security headers
+	header {
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+	}
+
+	# Cache static assets
+	@static path *.css *.js *.png *.jpg *.jpeg *.gif *.svg *.webp *.woff *.woff2 *.ico
+	header @static Cache-Control "public, max-age=31536000, immutable"
+
+	# Cache HTML shorter
+	@html path *.html /
+	header @html Cache-Control "public, max-age=3600"
+}
