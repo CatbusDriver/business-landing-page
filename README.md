@@ -1,175 +1,141 @@
-# Astro Validation Landing
+# Uwe Richter Immobilien – Website
 
-[![Astro Themes](https://img.shields.io/badge/Featured_on-Astro_Themes-orange?logo=astro&logoColor=white)](https://astro.build/themes/details/astro-validation-landing/)
+Business website for **RWR Immobilienmakler GmbH** (Uwe Richter), a real estate agency in Freiberg, Saxony, Germany. Built with Astro, Tailwind CSS v4, and Starwind UI. Based on the [Astro Validation Landing](https://github.com/Sebasala/astro-validation-landing) template.
 
-[![GitHub stars](https://img.shields.io/github/stars/Sebasala/astro-validation-landing?style=social)](https://github.com/Sebasala/astro-validation-landing)
+## Overview
 
-Astro Validation Landing is a conversion-focused landing page starter for validating product ideas quickly.
-It combines Astro, Tailwind CSS v4, and Starwind UI primitives into a modular page that is easy to customize.
+A German-language static website for a real estate agent, featuring:
 
-![Astro Validation Landing Screenshot](image.png)
-
-## Why
-
-When launching a new product, validating your idea with real users before investing in development is crucial.
-A well-designed landing page can help you collect emails, gauge interest, and get feedback on your concept.
-This starter provides a solid foundation to create a compelling landing page without starting from scratch.
-
-## What Is Included
-
-- A complete one-page validation flow: Header, Hero, Problem/Solution, Features, How It Works, Testimonials, CTA, FAQ, Footer.
-- Mobile-first responsive layout and dark mode support.
-- SEO-ready layout tags (title, description, canonical, Open Graph, Twitter card).
-- Centralized content configuration in a single file for fast copy updates.
-- Tailwind CSS v4 design tokens with CSS variables for light and dark themes.
+- **Landing page** with hero, services, process steps, contact CTA, and FAQ
+- **Impressum** (legal imprint, § 5 DDG)
+- **Datenschutzerklärung** (privacy policy, DSGVO-compliant)
+- Dark/light mode toggle in the header
+- SEO meta tags, sitemap, and robots.txt
+- Self-hosted on Hetzner with Caddy (see `Caddyfile` and `server/`)
 
 ## Tech Stack
 
-- [Astro 6](https://astro.build/)
-- [Tailwind CSS v4](https://tailwindcss.com/)
-- [Starwind UI](https://starwind.dev/) component primitives
-- TypeScript (strict Astro config)
+- [Astro 6](https://astro.build/) – static site generator
+- [Tailwind CSS v4](https://tailwindcss.com/) – utility-first CSS with CSS variables for theming
+- [Starwind UI](https://starwind.dev/) – component primitives (accordion, avatar, button, card)
+- [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) – automatic sitemap generation
+- TypeScript
+
+## Project Structure
+
+```
+├── public/
+│   ├── robots.txt              # Search engine crawling rules + sitemap reference
+│   └── launch.svg              # Favicon
+├── server/
+│   └── update-and-restart.sh   # Cron script for nightly server updates
+├── src/
+│   ├── components/
+│   │   ├── Header.astro        # Sticky header with nav, dark/light toggle, mobile menu
+│   │   ├── Hero.astro          # Hero section with Immowelt button + trust indicator
+│   │   ├── Description.astro   # Reusable text block (used for problem + solution)
+│   │   ├── Features.astro      # 6 real estate service cards
+│   │   ├── HowItWorks.astro    # 3-step process (Kontakt → Beratung → Ergebnis)
+│   │   ├── CTA.astro           # Contact section (phone, email, Immowelt, address)
+│   │   ├── FAQ.astro           # 5 accordion Q&A items
+│   │   ├── Footer.astro        # 4-column footer with nav, legal links, contact info
+│   │   ├── Logo.astro          # House SVG icon
+│   │   ├── SocialIcon.astro    # Icon renderer (supports immowelt, twitter, github, linkedin)
+│   │   └── starwind/           # Starwind UI primitives (accordion, avatar, button, card)
+│   ├── content/
+│   │   └── content.ts          # ⭐ All page text, links, and configuration in one file
+│   ├── layouts/
+│   │   └── Layout.astro        # Base HTML layout (lang="de", SEO tags, dark mode init)
+│   ├── pages/
+│   │   ├── index.astro         # Main landing page – composes all sections
+│   │   ├── impressum.astro     # Legal imprint (§ 5 DDG)
+│   │   └── privacy.astro       # Privacy policy (DSGVO)
+│   └── styles/
+│       └── starwind.css        # Tailwind v4 design tokens (colors, radii, light/dark)
+├── Caddyfile                   # Production Caddy web server config
+├── astro.config.mjs            # Astro config (site URL, sitemap, Tailwind)
+└── starwind.config.json        # Starwind UI component config
+```
+
+## Content Management
+
+All text content is centralized in **`src/content/content.ts`**. This single file exports:
+
+| Export | Purpose |
+|--------|---------|
+| `siteConfig` | Site name, SEO title/description, navigation links, legal links |
+| `header` | Header nav links and CTA button |
+| `hero` | Headline, subheadline, CTA buttons |
+| `problem` | Problem statement section |
+| `solution` | Solution statement section |
+| `features` | 6 service cards (Verkauf, Vermietung, Energieausweis, Gewerbe, Bewertung, Projektentwicklung) |
+| `howItWorks` | 3-step process |
+| `cta` | Contact details (phone, email, Immowelt URL, address) |
+| `faq` | FAQ questions and answers |
+| `footer` | Footer navigation, legal links, social links, copyright |
+
+To update any text on the site, edit this file and rebuild.
 
 ## Quick Start
 
-[![View Live Demo](https://img.shields.io/badge/View-Live_Demo-blue)](https://astro-validation-landing.netlify.app/)
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Sebasala/astro-validation-landing)
-
 ### Prerequisites
 
-- Node.js +22.12.0
+- Node.js ≥ 22.12.0
 - pnpm 10+
 
-### Install And Run
+### Install and Run
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Open the local URL shown in your terminal (Astro defaults to `http://localhost:4321`).
+Opens at `http://localhost:4321`.
 
-### Build And Preview
+### Build for Production
 
 ```bash
 pnpm build
-pnpm preview
 ```
 
-## Available Scripts
+Output goes to `dist/`. This generates static HTML, CSS, JS, plus `sitemap-index.xml`.
 
-- `pnpm dev` - Start local dev server.
-- `pnpm build` - Build production output to `dist/`.
-- `pnpm preview` - Preview the production build locally.
-- `pnpm astro ...` - Run Astro CLI commands directly.
+## Deployment
 
-## Project Structure
+The site is deployed to a **Hetzner VPS** running **Caddy** in Docker.
 
-```text
-.
-|- public/
-|  |- favicon.ico
-|  |- launch.svg
-|- src/
-|  |- components/
-|  |  |- Header.astro
-|  |  |- Hero.astro
-|  |  |- Description.astro
-|  |  |- Features.astro
-|  |  |- HowItWorks.astro
-|  |  |- Testimonials.astro
-|  |  |- CTA.astro
-|  |  |- FAQ.astro
-|  |  |- Footer.astro
-|  |  |- starwind/
-|  |- content/
-|  |  |- content.ts
-|  |- layouts/
-|  |  |- Layout.astro
-|  |- pages/
-|  |  |- index.astro
-|  |- styles/
-|  |  |- starwind.css
-|- astro.config.mjs
-|- starwind.config.json
-```
+### Deploy Steps
 
-## Customization Guide
+1. Build locally: `pnpm build`
+2. Upload to server:
+   ```bash
+   scp -r dist/* user@SERVER-IP:/var/www/immo-team-richter.de/
+   ```
+3. Caddy config is in `Caddyfile` – copy to `/etc/caddy/Caddyfile` on the server
+4. Reload: `sudo systemctl reload caddy`
 
-### 1) Update Site Content
+### DNS (DomainFactory)
 
-Most page copy and links live in `src/content/content.ts`.
+Both `immo-team-richter.de` and `immo-t-r.de` need A records pointing to the Hetzner server IP.
 
-Update these exported objects to customize the landing page:
+### Server Maintenance
 
-- `siteConfig`: SEO title/description and Open Graph image path.
-- `header`: nav links and header CTA.
-- `hero`: headline, subheadline, primary/secondary CTA labels and links.
-- `problem` and `solution`: long-form narrative blocks.
-- `features`: section heading and feature cards.
-- `howItWorks`: three-step process content.
-- `testimonials`: quote cards.
-- `cta`: final conversion block copy and button label/link.
-- `faq`: accordion questions and answers.
-- `footer`: legal links, brand copy, and social URLs.
-
-### 2) Update Theme And Design Tokens
-
-Edit `src/styles/starwind.css` to customize:
-
-- Light and dark color tokens (`:root` and `.dark`).
-- Radius scale (`--radius`, `--radius-*`).
-- Semantic variables used by components (`--primary`, `--muted`, etc.).
-
-Tailwind v4 is configured through Vite in `astro.config.mjs`.
-
-### 3) Replace Branding Assets
-
-- Replace the placeholder logo SVG in `src/components/Logo.astro`.
-- Replace favicon assets in `public/favicon.ico` and `public/launch.svg`.
-- Add your Open Graph image and point `siteConfig.image` to it (for example `public/og-image.png`).
-
-### 4) Built-in Lead Capture with Netlify Forms
-
-Validating an idea requires collecting emails. We've made this incredibly easy using Netlify Forms. No external services, no API keys, and no backend code required.
-How to use it:
-In your CTA.astro component, add the data-netlify="true" attribute to your form element.
-
-```Html
-<form name="newsletter" method="POST" data-netlify="true">
-  <input type="email" name="email" placeholder="Enter your email" required />
-  <button type="submit">Get Early Access</button>
-</form>
-```
-
-That's it. When you deploy to Netlify, they will automatically detect the form. You will see all your email signups directly in your Netlify Dashboard under the "Forms" tab.
-Note: If you prefer to use an external service like Mailchimp or ConvertKit later, you can simply remove the data-netlify attribute and point the form action to your service provider's URL.
-
-### 5) Wire The CTA To Your Email Tool
-
-`src/components/CTA.astro` currently renders a form to capture leads directly in Netlify.
-To collect data on other platforms or services you can connect the form to your own provider (Mailchimp, ConvertKit, Brevo, Formspree, custom endpoint, etc.) and handling submit.
+`server/update-and-restart.sh` is a cron script that runs nightly at 03:00 to:
+- Update and upgrade Ubuntu packages
+- Pull and restart the Caddy Docker container
+- Reboot if a kernel update requires it
 
 ## Section Anchor Map
 
-The page includes these section IDs for in-page navigation:
+In-page navigation uses these IDs:
 
-- `#hero`
-- `#features`
-- `#how-it-works`
-- `#cta`
-- `#faq`
-- `#testimonials`
+- `/#features` – Leistungen (services)
+- `/#how-it-works` – So funktioniert's (process)
+- `/#cta` – Kontakt (contact)
+- `/#faq` – Häufige Fragen
 
-Update header/footer links in `src/content/content.ts` if you rename or reorder sections.
+All anchor links use absolute paths (`/#section`) so they work from subpages too.
 
-## Deployment Notes
+## Theming
 
-This project builds to static assets and can be deployed to any static host (Netlify, Vercel static output, Cloudflare Pages, GitHub Pages, etc.).
-
-Before deploying:
-
-1. Set your production site URL in `astro.config.mjs` using Astro's `site` option.
-2. Replace placeholder logos/icons and social links.
-3. Wire up your email capture flow in the CTA section.
-4. Ensure legal links in the footer point to real pages.
+Edit `src/styles/starwind.css` to customize colors. The file defines CSS variables for both `:root` (light) and `.dark` (dark) themes. The header includes a toggle slider that persists the choice to `localStorage`.
